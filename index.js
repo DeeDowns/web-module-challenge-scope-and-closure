@@ -21,16 +21,25 @@ function processFirstItem(stringList, callback) {
 // ⭐️ Example Challenge END ⭐️
 
 
+
 ///// M V P ///////
 
 /* Task 1: `counterMaker`
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- * 
+ *    counter1:
+ *      let count is functionally scoped within the counterMaker function
+ *      counterMaker has a function nested within it
+ *    counter2: 
+ *      let count is in the global scope. Its available to everything
  * 2. Which of the two uses a closure? How can you tell?
+ *    counter1
+ *    Has a child function that can access the code in parent function
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
+ *  counter1 would be prefereable when 
+ *  counter2 would be better if the let count needed to be accessed by other functions.
  *
 */
 
@@ -44,6 +53,7 @@ function counterMaker() {
 
 const counter1 = counterMaker();
 
+
 // counter2 code
 let count = 0;
 
@@ -56,11 +66,17 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
-
-    /*Code Here*/
+function inning(team){
+  let score = Math.floor(Math.random() * 3)
+  return `The ${team} scored ${score} point(s) this inning`
 
 }
+
+console.log(inning('Red Sox'));
+
+
+
+
 
 /* Task 3: finalScore()
 
