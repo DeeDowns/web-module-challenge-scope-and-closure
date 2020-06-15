@@ -29,16 +29,16 @@ function processFirstItem(stringList, callback) {
  * 
  * 1. What is the difference between counter1 and counter2?
  *    counter1:
- *      let count is functionally scoped within the counterMaker function
+ *      let count is functionally scoped within the counterMaker function;
  *      counterMaker has a function nested within it
  *    counter2: 
- *      let count is in the global scope. Its available to everything
+ *      let count is in the global scope. Its available to everything.
+ * 
  * 2. Which of the two uses a closure? How can you tell?
- *    counter1
- *    Has a child function that can access the code in parent function
+ *    counter1 because it has a child function that can access the code in parent function.
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *  counter1 would be prefereable when 
+ *  counter1 would be prefereable if you wanted the let count variable to only be accessible through the counterMaker function
  *  counter2 would be better if the let count needed to be accessed by other functions.
  *
 */
@@ -72,10 +72,6 @@ function inning(){
 
 }
 
-// console.log(inning())
-// console.log(inning())
-// console.log(inning())
-
 
 /* Task 3: finalScore()
 
@@ -101,9 +97,6 @@ function finalScore(callback, inningNumber){
     }
   return finalObj
 }
-
-
-
 
 console.log(finalScore(inning, 9));
 
@@ -136,7 +129,7 @@ function scoreboard(callback, inningNumber) {
   for(let i = 1; i <= inningNumber; i++){
     homeScore += callback();
     awayScore += callback()
-    inningArr.push(`${i}th innning: ${homeScore} - ${awayScore}`)
+    inningArr.push(`Inning ${i} Score: ${homeScore} - ${awayScore}`)
   }
   finalScore = `Final Score: ${homeScore} - ${awayScore}`
   inningArr.push(finalScore);
